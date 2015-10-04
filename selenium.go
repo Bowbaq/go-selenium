@@ -1,4 +1,4 @@
-package selenium // import "sourcegraph.com/sourcegraph/go-selenium"
+package selenium // import "github.com/Bowbaq/go-selenium"
 
 /* Element finding options */
 const (
@@ -117,7 +117,8 @@ type Cookie struct {
 	Path   string `json:"path"`
 	Domain string `json:"domain"`
 	Secure bool   `json:"secure"`
-	Expiry uint   `json:"expiry"`
+	// Expiry is sometimes in the form 1475462512.161885 (chromedriver)
+	Expiry interface{} `json:"expiry"`
 }
 
 type WebDriver interface {
